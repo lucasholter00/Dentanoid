@@ -16,3 +16,6 @@
 [submodule "notification-service"]
 	path = notification-service
 	url = git@github.com:lucasholter00/notification-service.git
+[submodule "patient-api"]
+	path = patient-api
+	url = git@github.com:lucasholter00/patient-api.git
