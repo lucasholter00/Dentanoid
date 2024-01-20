@@ -22,3 +22,6 @@
 [submodule "patient-client"]
 	path = patient-client
 	url = git@github.com:lucasholter00/patient-client.git
+[submodule "dentist-client"]
+	path = dentist-client
+	url = git@github.com:lucasholter00/dentist-client.git
