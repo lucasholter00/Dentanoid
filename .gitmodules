@@ -19,3 +19,6 @@
 [submodule "patient-api"]
 	path = patient-api
 	url = git@github.com:lucasholter00/patient-api.git
+[submodule "patient-client"]
+	path = patient-client
+	url = git@github.com:lucasholter00/patient-client.git
