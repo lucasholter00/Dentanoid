@@ -10,3 +10,6 @@
 [submodule "dentist-api"]
 	path = dentist-api
 	url = git@github.com:lucasholter00/dentist-api.git
+[submodule "monitor-service"]
+	path = monitor-service
+	url = git@github.com:lucasholter00/monitor-service.git
