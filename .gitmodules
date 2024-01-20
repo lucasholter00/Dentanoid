@@ -13,3 +13,6 @@
 [submodule "monitor-service"]
 	path = monitor-service
 	url = git@github.com:lucasholter00/monitor-service.git
+[submodule "notification-service"]
+	path = notification-service
+	url = git@github.com:lucasholter00/notification-service.git
