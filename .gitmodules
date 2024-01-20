@@ -4,3 +4,6 @@
 [submodule "appointment-service"]
 	path = appointment-service
 	url = git@github.com:lucasholter00/appointment-service.git
+[submodule "clinic-service"]
+	path = clinic-service
+	url = git@github.com:lucasholter00/clinic-service.git
