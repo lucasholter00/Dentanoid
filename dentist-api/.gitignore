@@ -1,0 +1,24 @@
+# Logs
+logs
+*.log
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Snowpack dependency directory (https://snowpack.dev/)
+web_modules/
+
+# Optional npm cache directory
+.npm
+
+# Optional cache
+.eslintcache
+.stylelintcache
+
+# parcel-bundler cache (https://parceljs.org/)
+.cache
+.parcel-cache
+
+# VSCode extensions
+.vscode-test

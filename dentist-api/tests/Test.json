@@ -1,0 +1,29 @@
+{
+	"info": {
+		"_postman_id": "2969d2c7-a2e8-4286-82b8-025a172cdb8e",
+		"name": "Placeholder test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29533868"
+	},
+	"item": [
+		{
+			"name": "get Localhost",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
