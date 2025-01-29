@@ -1,4 +1,4 @@
-# Group 20 - Distributed Systems [Project title here]
+# Dentanoid
 
 ## Components
 [Patient Client](https://git.chalmers.se/courses/dit355/2023/student-teams/dit356-2023-20/group-20-distributed-systems-patient-client)
