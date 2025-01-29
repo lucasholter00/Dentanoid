@@ -1,0 +1,40 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@babel/core": "^7.22.17",
+    "@cubejs-client/core": "^0.31.0",
+    "@googlemaps/js-api-loader": "^1.16.2",
+    "@vue/runtime-dom": "^3.3.4",
+    "axios": "^1.6.1",
+    "bootstrap": "^4.6.0",
+    "bootstrap-vue": "^2.21.2",
+    "dateformat": "^5.0.3",
+    "mqtt": "^5.3.4",
+    "paho-mqtt": "^1.1.0",
+    "toastr": "^2.1.4",
+    "vue": "^2.6.14",
+    "vue-router": "^3.6.5"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.22.10",
+    "@vue/cli-plugin-eslint": "^5.0.8",
+    "@vue/cli-service": "^5.0.8",
+    "@vue/eslint-config-standard": "^8.0.1",
+    "concurrently": "^8.2.1",
+    "eslint": "^8.47.0",
+    "eslint-plugin-import": "^2.24.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-standard": "^5.0.0",
+    "eslint-plugin-vue": "^9.17.0",
+    "parcel": "^2.6.2",
+    "vue-template-compiler": "^2.6.14"
+  }
+}
