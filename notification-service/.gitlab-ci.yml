@@ -1,0 +1,90 @@
+image: node:latest
+
+# Cache modules in between jobs per-branch
+cache:
+  paths:
+    - node_modules/
+
+stages:
+  - build
+  - test
+  - build-docker-image
+  - deploy
+
+build:
+  stage: build
+  tags:
+    - docker
+  script:
+    - npm install
+
+test:
+  stage: test
+  tags:
+    - docker
+  script:
+    - npm test
+
+build-docker-image:
+  stage: build-docker-image
+  image: docker:latest
+  tags: 
+    - docker-build
+  only:
+    - main
+  services:
+    - docker:dind
+  variables:  # not strictly needed, depending on runner configuration
+    DOCKER_HOST: "tcp://docker:2375"
+    DOCKER_TLS_CERTDIR: ""
+
+    IMAGE_NAME: "notification-service:x86"
+    AZURE_REGISTRY_USERNAME: $CI_REGISTRY_USER
+    AZURE_REGISTRY_PASSWORD: $CI_REGISTRY_PASSWORD
+    AZURE_REGISTRY: dentanoidregistry.azurecr.io
+
+  script:
+    - touch .env
+
+    - echo -e "DB_USER = $DB_USER \n" >> .env
+    - echo -e "DB_PASSWORD = $DB_PASSWORD \n" >> .env
+    - echo -e "DB_CLUSTER = $DB_CLUSTER \n" >> .env
+    - echo -e "DB_NAME = $DB_NAME \n" >> .env
+
+    - echo -e "MQTT_HOST = $MQTT_HOST \n" >> .env
+    - echo -e "MQTT_PORT = $MQTT_PORT \n" >> .env
+
+    - echo -e "EMAIL_SERVICE = $EMAIL_SERVICE \n" >> .env
+    - echo -e "EMAIL_USERNAME = $EMAIL_USERNAME \n" >> .env
+    - echo -e "EMAIL_PASSWORD = $EMAIL_PASSWORD \n" >> .env
+    - echo -e "EMAIL_FROM = $EMAIL_FROM \n" >> .env
+    - echo -e "EMAIL_SENDER = $EMAIL_SENDER \n" >> .env
+    - echo -e "EMAIL_USERNAME = $EMAIL_USERNAME \n" >> .env
+    - echo -e "SMTP_HOST = $SMTP_HOST \n" >> .env
+    - echo -e "SMTP_PORT = $SMTP_PORT \n" >> .env
+
+    - echo -e "API_URL = $API_URL \n" >> .env
+
+
+    - docker context ls
+    - docker info
+    - docker buildx create --use
+    - docker buildx build --platform linux/amd64 -t $IMAGE_NAME . --load
+    - docker tag $IMAGE_NAME $AZURE_REGISTRY/services/notification
+    - docker login $AZURE_REGISTRY -u $AZURE_REGISTRY_USERNAME -p $AZURE_REGISTRY_PASSWORD
+    - docker push $AZURE_REGISTRY/services/notification
+    - docker images
+
+deploy:
+  stage: deploy
+  tags:
+    - docker
+  only:
+    - main
+  image:
+    name: mcr.microsoft.com/azure-cli
+    entrypoint: [""]
+  script:
+    - az login --service-principal -u "$AZURE_CLIENT_ID" -p "$AZURE_CLIENT_SECRET" --tenant "$AZURE_TENANT_ID"
+    - az container delete --name notification-service --resource-group Dentanoid --yes
+    - az container create --resource-group Dentanoid --name notification-service --image dentanoidRegistry.azurecr.io/services/notification:latest --registry-username "$CI_REGISTRY_USER" --registry-password  "$CI_REGISTRY_PASSWORD" --restart-policy Always
