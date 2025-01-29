@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+}
+
+html,
+body,
+#app {
+    height: 100%;
+}
+
+.content {
+    min-height: 100%;
+    padding-bottom: 25px;
+    /* equal to footer height */
+    margin-bottom: -135px;
+    background-color: skyblue;
+    color: white;
+}
+
+.content:after {
+    content: "";
+    display: block;
+}
+
+#footer,
+.content:after {
+    height: 135px;
+}
+
+#loading-img {
+    max-width: 100px;
+    animation: wiggle 1s infinite;
+}
+
+#loading-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes wiggle {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-10deg);
+    }
+
+    50% {
+        transform: rotate(10deg);
+    }
+
+    75% {
+        transform: rotate(-5deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.vuecal {
+    color: black;
+    background-color: white;
+}
+
+.free-slot {
+    background-color: skyblue !important;
+    color: white !important;
+}
+
+.booked-slot {
+    background: repeating-linear-gradient(45deg, transparent, transparent 10px, #f2f2f2 10px, #f2f2f2 20px);
+    color: black !important;
+}
+
+.vuecal__event {
+    cursor: pointer;
+}
