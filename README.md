@@ -38,5 +38,10 @@ A seamless platform for patients and dentists to book, manage, and track appoint
 ## Use Case Diagram
 ![Use Case Diagram](./images/diagrams/Use Case Diagram.png)
 
-## Video
-Link here
+## Authors
+- Lucas Carlsson Holter <!-- x -->
+- Cornelia Olofsson Larsson <!-- x -->
+- James Klouda
+- Joel Matsson
+- Jonathan Boman
+- Mohamad Khalil
