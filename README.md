@@ -1,7 +1,9 @@
-# Dentanoid
+# <!-- Title --> Dentanoid <!-- /Title -->
 
 ## Description
+<!-- Description -->
 A seamless platform for patients and dentists to book, manage, and track appointments effortlessly. Patients can easily schedule visits, while dentists oversee availability and upcoming bookings. Automated reminders help reduce no-shows, ensuring a smooth and efficient experience for everyone. Secure, fast, and designed to simplify dental appointments.
+<!-- /Description -->
 
 ## Components
 [Patient Client](https://git.chalmers.se/courses/dit355/2023/student-teams/dit356-2023-20/group-20-distributed-systems-patient-client)
@@ -39,8 +41,10 @@ A seamless platform for patients and dentists to book, manage, and track appoint
 ![Use Case Diagram](./images/diagrams/Use Case Diagram.png)
 
 ## Authors
-- Lucas Carlsson Holter <!-- x -->
-- Cornelia Olofsson Larsson <!-- x -->
+<!-- Authors -->
+- Lucas Carlsson Holter
+- Cornelia Olofsson Larsson
+<!-- /Authors -->
 - James Klouda
 - Joel Matsson
 - Jonathan Boman
