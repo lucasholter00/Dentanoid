@@ -45,3 +45,14 @@ A seamless platform for patients and dentists to book, manage, and track appoint
 - Joel Matsson
 - Jonathan Boman
 - Mohamad Khalil
+
+
+
+
+## Keywords
+<!-- Keywords -->
+- Distributed Microservices
+- MQTT
+- REST
+- MEVN stack
+<!-- /Keywords -->
