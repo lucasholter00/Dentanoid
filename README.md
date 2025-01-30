@@ -43,8 +43,7 @@ A seamless platform for patients and dentists to book, manage, and track appoint
 ## Authors
 <!-- Authors -->
 - Lucas Carlsson Holter
-- Cornelia Olofsson Larsson
-<!-- /Authors -->
+- Cornelia Olofsson Larsson <!-- /Authors -->
 - James Klouda
 - Joel Matsson
 - Jonathan Boman
